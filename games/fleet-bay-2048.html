@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fleet Bay 2048: Boat Merge | Bobblebay Games</title>
+<meta name="description" content="Swipe to merge boats from rowboat to aircraft carrier in 10,000 puzzle levels.">
+<link rel="canonical" href="https://bobblebaygames.com/games/fleet-bay-2048.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#F4FBF9">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bobblebay Games">
+<meta property="og:title" content="Fleet Bay 2048: Boat Merge | Bobblebay Games">
+<meta property="og:description" content="Swipe to merge boats from rowboat to aircraft carrier in 10,000 puzzle levels.">
+<meta property="og:url" content="https://bobblebaygames.com/games/fleet-bay-2048.html">
+<meta property="og:image" content="https://bobblebaygames.com/games/img/fleet-bay-2048-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "Fleet Bay 2048: Boat Merge", "description": "Swipe to merge boats from rowboat to aircraft carrier in 10,000 puzzle levels.", "url": "https://bobblebaygames.com/games/fleet-bay-2048.html", "image": "https://bobblebaygames.com/games/img/fleet-bay-2048-share.jpg", "gamePlatform": ["iOS", "Android"], "applicationCategory": "Game", "genre": "Puzzle", "publisher": {"@type": "Organization", "name": "Bobblebay Games", "url": "https://bobblebaygames.com/"}}</script>
+<style>
+:root{--ink:#143A5A;--muted:#3E5F7A;--link:#1A6E9C;--bg:#F4FBF9;--foam:#DDF3EE;--sun:#FFC94D;
+--font:ui-rounded,"SF Pro Rounded",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{color-scheme:light;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.0625rem;line-height:1.6}
+a{color:var(--link);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--link);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:16px;top:16px;background:#fff;padding:10px 14px;border-radius:10px;z-index:10}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.site-head{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;padding:18px 0;flex-wrap:wrap}
+.brand{display:inline-flex;border-radius:12px}
+.brand>svg{height:48px;width:auto;display:block}
+.site-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
+.site-nav a{display:inline-block;padding:10px 14px;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:650}
+.site-nav a:hover,.site-nav a[aria-current="page"]{background:var(--foam)}
+.hero{border-radius:28px;overflow:hidden;aspect-ratio:21/9;background:#93E0D8}
+.hero svg{display:block;width:100%;height:100%}
+.bob{animation:bob 5s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 70%}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-34px) rotate(-2.5deg)}}
+@media (prefers-reduced-motion:reduce){.bob{animation:none}}
+.intro{max-width:42rem;padding:40px 0 4px}
+h1{font-size:clamp(2.1rem,5.2vw,3.3rem);line-height:1.08;margin:0 0 16px;letter-spacing:-0.015em}
+.lead{font-size:1.2rem;color:var(--muted);margin:0}
+.block{padding:44px 0}
+h2{font-size:1.7rem;line-height:1.2;margin:0 0 20px}
+.games{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.game{background:#fff;border-radius:22px;overflow:hidden;border:2px solid var(--foam)}
+.game svg{display:block;width:100%;height:auto}
+.game-body{padding:20px 22px 24px}
+.game h3{margin:0 0 6px;font-size:1.35rem;line-height:1.25}
+.game p{margin:0 0 16px;color:var(--muted)}
+.status{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--foam);font-weight:650;font-size:.92rem}
+.help{background:var(--ink);color:#E8F6F2;border-radius:28px;padding:30px 32px;display:flex;gap:16px 24px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:8px 0 56px}
+.help h2{color:#fff;margin:0 0 4px;font-size:1.45rem}
+.help p{margin:0}
+.button{display:inline-block;background:var(--sun);color:var(--ink);font-weight:750;padding:12px 22px;border-radius:999px;text-decoration:none;line-height:1.4}
+.button:hover{background:#FFD772}
+.button:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:999px}
+.site-foot{border-top:2px solid var(--foam);padding:24px 0 44px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
+.site-foot p{margin:0}
+.site-foot ul{list-style:none;margin:0;padding:0;display:flex;gap:6px 20px;flex-wrap:wrap}
+.prose{max-width:42rem;padding:28px 0 56px}
+.prose h1{font-size:clamp(2rem,4.6vw,2.8rem)}
+.prose h2{font-size:1.3rem;margin:34px 0 8px}
+.prose p,.prose ul{margin:0 0 14px}
+.prose ul{padding-left:1.25rem}
+.prose li{margin:6px 0}
+.updated{color:var(--muted);margin:-6px 0 22px}
+.contact{background:#fff;border:2px solid var(--foam);border-radius:22px;padding:22px 24px;margin:22px 0 8px}
+.contact p{margin:0}
+.contact .big{font-size:1.3rem;font-weight:700;word-break:break-word}
+@media (max-width:720px){.games{grid-template-columns:1fr}}
+@media (max-width:640px){.hero{aspect-ratio:4/3;border-radius:22px}.brand>svg{height:40px}.help{padding:26px 22px}}
+
+.games{grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.game{display:flex;flex-direction:column}
+.game .cover{display:block;width:100%;height:auto;aspect-ratio:1024/500;object-fit:cover;background:var(--foam)}
+.game-body{display:flex;flex-direction:column;gap:10px;flex:1}
+.game-name{display:flex;align-items:center;gap:12px}
+.game-name img{width:52px;height:52px;border-radius:13px;flex:none}
+.game-name h3{margin:0}
+.game-name span{display:block;color:var(--muted);font-size:.95rem;line-height:1.3}
+.game p{margin:0}
+.game-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.more{font-weight:700}
+.crumb{margin:6px 0 0;font-weight:650}
+.g-hero{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px 24px;align-items:center;padding:22px 0 6px}
+.g-hero img{width:120px;height:120px;border-radius:28px;box-shadow:0 10px 24px -14px rgba(20,58,90,.45)}
+.g-hero h1{margin:0 0 6px}
+.g-hero .lead{margin:0 0 12px}
+.g-grid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:32px;padding:26px 0 8px;align-items:start}
+.g-video video{display:block;width:100%;height:auto;aspect-ratio:886/1920;border-radius:24px;background:#0B1F31}
+.g-video p{color:var(--muted);font-size:.92rem;margin:8px 4px 0}
+.features{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:12px}
+.features li{background:#fff;border:2px solid var(--foam);border-radius:16px;padding:12px 16px}
+.stores{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 0}
+.store-btn{display:inline-block;background:var(--ink);color:#fff;font-weight:700;padding:11px 18px;border-radius:12px;text-decoration:none}
+.store-btn:hover{background:#1E4E75}
+.shots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:12px 0 8px}
+.shots img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:16px;border:2px solid var(--foam);background:#fff}
+@media (max-width:760px){.g-grid{grid-template-columns:minmax(0,1fr)}.g-video{max-width:300px;margin:0 auto;width:100%}
+.shots{grid-template-columns:repeat(2,minmax(0,1fr))}.g-hero{grid-template-columns:minmax(0,1fr)}.g-hero img{width:96px;height:96px;border-radius:22px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+<a class="brand" href="../index.html"><svg role="img" aria-label="Bobblebay Games" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1968 500"><defs><clipPath id="tileclip"><rect x="40" y="40" width="420" height="420" rx="97"/></clipPath></defs><g clip-path="url(#tileclip)"><svg x="40" y="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="420" height="420"><defs><linearGradient id="sky-i" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#93E0D8"/><stop offset="1" stop-color="#E6F8F1"/></linearGradient><radialGradient id="glow-i" cx="0.5" cy="0.5" r="0.5"><stop offset="0.55" stop-color="#FFE7A6" stop-opacity="0.85"/><stop offset="1" stop-color="#FFE7A6" stop-opacity="0"/></radialGradient></defs><rect width="1024" height="1024" fill="url(#sky-i)"/><circle cx="770" cy="300" r="250" fill="url(#glow-i)"/><circle cx="770" cy="300" r="140" fill="#FFC94D"/><path d="M-10.0,1034.0L-10.0,695.4C2.4,698.6 14.9,704.5 27.3,710.0C39.7,715.4 52.1,720.2 64.6,722.7C77.0,725.2 89.4,725.6 101.9,725.3C114.3,724.9 126.7,724.1 139.1,723.2C151.6,722.3 164.0,721.1 176.4,718.6C188.9,716.0 201.3,712.0 213.7,707.2C226.1,702.5 238.6,697.4 251.0,694.7C263.4,692.0 275.9,692.0 288.3,695.0C300.7,698.0 313.1,703.7 325.6,709.2C338.0,714.7 350.4,719.6 362.9,722.3C375.3,725.0 387.7,725.6 400.1,725.3C412.6,725.0 425.0,724.2 437.4,723.3C449.9,722.4 462.3,721.3 474.7,718.9C487.1,716.5 499.6,712.6 512.0,707.9C524.4,703.2 536.9,698.0 549.3,695.0C561.7,692.1 574.1,691.8 586.6,694.6C599.0,697.3 611.4,702.9 623.9,708.5C636.3,714.0 648.7,719.1 661.1,721.9C673.6,724.8 686.0,725.5 698.4,725.3C710.9,725.2 723.3,724.3 735.7,723.4C748.1,722.5 760.6,721.5 773.0,719.2C785.4,716.9 797.9,713.2 810.3,708.5C822.7,703.9 835.1,698.6 847.6,695.5C860.0,692.3 872.4,691.7 884.9,694.2C897.3,696.7 909.7,702.2 922.1,707.7C934.6,713.2 947.0,718.5 959.4,721.5C971.9,724.6 984.3,725.5 996.7,725.4C1009.1,725.3 1021.6,724.4 1034.0,723.5L1034.0,1034.0Z" fill="#27AFA9"/><g transform="rotate(-6.0 548.0 624.0)"><clipPath id="hull-is"><circle cx="548.0" cy="624.0" r="202.0"/></clipPath><rect x="381.0" y="142.0" width="16.0" height="150.0" rx="8.0" fill="#143A5A"/><path d="M395.0,146.0 L509.0,166.0 L481.0,184.0 L509.0,204.0 L395.0,216.0Z" fill="#FFB833" stroke="#FFB833" stroke-width="12.0" stroke-linejoin="round"/><rect x="346.0" y="262.0" width="86.0" height="362.0" rx="43.0" fill="#FF6A55"/><rect x="346.0" y="305.0" width="86.0" height="319.0" fill="#FF6A55"/><g clip-path="url(#hull-is)"><circle cx="548.0" cy="624.0" r="202.0" fill="#E5513F"/><circle cx="522.0" cy="594.0" r="202.0" fill="#FF6A55"/><rect x="336.0" y="704.0" width="424.0" height="26.0" fill="#FFF7E8"/></g><circle cx="548.0" cy="624.0" r="88.0" fill="#FFF7E8"/><circle cx="548.0" cy="624.0" r="66.0" fill="#1F78A8"/><circle cx="619.1" cy="653.5" r="5.5" fill="#E5513F"/><circle cx="577.5" cy="695.1" r="5.5" fill="#E5513F"/><circle cx="518.5" cy="695.1" r="5.5" fill="#E5513F"/><circle cx="476.9" cy="653.5" r="5.5" fill="#E5513F"/><circle cx="476.9" cy="594.5" r="5.5" fill="#E5513F"/><circle cx="518.5" cy="552.9" r="5.5" fill="#E5513F"/><circle cx="577.5" cy="552.9" r="5.5" fill="#E5513F"/><circle cx="619.1" cy="594.5" r="5.5" fill="#E5513F"/><clipPath id="glass-is"><circle cx="548.0" cy="624.0" r="66.0"/></clipPath><g clip-path="url(#glass-is)"><rect x="428.0" y="610.0" width="240.0" height="22.0" fill="#FFF7E8" opacity="0.55" transform="rotate(-45 548.0 624.0)"/><rect x="428.0" y="646.0" width="240.0" height="9.0" fill="#FFF7E8" opacity="0.4" transform="rotate(-45 548.0 624.0)"/></g></g><path d="M-10.0,1034.0L-10.0,781.0C1.6,778.7 13.2,774.9 24.8,769.9C36.4,764.9 48.0,758.8 59.6,754.7C71.2,750.7 82.8,749.1 94.4,751.1C106.0,753.2 117.6,758.8 129.2,764.9C140.8,771.1 152.4,777.5 164.0,781.4C175.6,785.3 187.2,786.9 198.8,787.0C210.4,787.2 222.0,786.2 233.6,785.3C245.2,784.4 256.8,783.4 268.4,781.3C280.0,779.2 291.6,775.5 303.2,770.6C314.8,765.7 326.4,759.5 338.0,755.3C349.6,751.1 361.2,749.1 372.8,750.9C384.4,752.6 396.0,758.0 407.6,764.1C419.2,770.2 430.8,776.7 442.4,780.8C454.0,785.0 465.6,786.7 477.2,787.0C488.8,787.3 500.4,786.3 512.0,785.4C523.6,784.5 535.2,783.6 546.8,781.6C558.4,779.6 570.0,776.1 581.6,771.3C593.2,766.4 604.8,760.3 616.4,755.9C628.0,751.5 639.6,749.2 651.2,750.6C662.8,752.1 674.4,757.2 686.0,763.3C697.6,769.3 709.2,775.9 720.8,780.3C732.4,784.6 744.0,786.6 755.6,787.0C767.2,787.3 778.8,786.5 790.4,785.6C802.0,784.7 813.6,783.8 825.2,781.9C836.8,779.9 848.4,776.7 860.0,771.9C871.6,767.2 883.2,761.1 894.8,756.5C906.4,752.0 918.0,749.3 929.6,750.5C941.2,751.6 952.8,756.4 964.4,762.4C976.0,768.4 987.6,775.1 999.2,779.6C1010.8,784.1 1022.4,786.4 1034.0,786.9L1034.0,1034.0Z" fill="#1F78A8"/><path d="M-10.0,1034.0L-10.0,917.5C3.4,917.5 16.8,916.8 30.2,916.0C43.5,915.2 56.9,914.4 70.3,912.6C83.7,910.9 97.1,907.9 110.5,903.9C123.8,899.8 137.2,894.9 150.6,891.3C164.0,887.8 177.4,886.0 190.8,887.2C204.2,888.4 217.5,892.5 230.9,897.4C244.3,902.3 257.7,907.8 271.1,911.4C284.5,915.1 297.8,916.9 311.2,917.4C324.6,917.9 338.0,917.2 351.4,916.5C364.8,915.8 378.2,915.1 391.5,913.7C404.9,912.3 418.3,910.0 431.7,906.4C445.1,902.8 458.5,897.9 471.8,893.8C485.2,889.8 498.6,886.8 512.0,886.8C525.4,886.8 538.8,889.8 552.2,894.3C565.5,898.8 578.9,904.5 592.3,908.8C605.7,913.1 619.1,915.9 632.5,916.9C645.8,917.9 659.2,917.5 672.6,916.9C686.0,916.3 699.4,915.6 712.8,914.5C726.2,913.4 739.5,911.7 752.9,908.6C766.3,905.5 779.7,901.0 793.1,896.6C806.5,892.3 819.8,888.4 833.2,887.2C846.6,886.0 860.0,887.7 873.4,891.6C886.8,895.4 900.2,901.1 913.5,905.9C926.9,910.6 940.3,914.3 953.7,916.0C967.1,917.7 980.5,917.7 993.8,917.3C1007.2,916.8 1020.6,916.1 1034.0,915.2L1034.0,1034.0Z" fill="#143A5A"/></svg></g><g fill="#143A5A" stroke="#143A5A" stroke-width="5.50" stroke-linejoin="round"><path transform="rotate(0.00 615.5 220.2) translate(530.00 290.00)" d="M155.5 -47.8Q155.5 -25.8 140.1 -12.9Q124.8 0 97.2 0H15.5V-175.5H94.5Q121.2 -175.5 136.4 -163.2Q151.5 -151 151.5 -130Q151.5 -114.5 143.4 -104.2Q135.2 -94 121.8 -90Q137 -86.8 146.2 -74.9Q155.5 -63 155.5 -47.8ZM58.2 -104.5H86.2Q96.8 -104.5 102.4 -109.1Q108 -113.8 108 -122.8Q108 -131.8 102.4 -136.5Q96.8 -141.2 86.2 -141.2H58.2ZM112.2 -53.5Q112.2 -62.8 106.1 -68Q100 -73.2 89.2 -73.2H58.2V-34.5H89.8Q100.5 -34.5 106.4 -39.4Q112.2 -44.2 112.2 -53.5Z"/><path transform="rotate(-1.10 774.2 213.3) translate(694.75 283.02)" d="M7 -69.8Q7 -91.2 16.5 -107.6Q26 -124 42.5 -132.8Q59 -141.5 79.5 -141.5Q100 -141.5 116.5 -132.8Q133 -124 142.5 -107.6Q152 -91.2 152 -69.8Q152 -48.2 142.4 -31.9Q132.8 -15.5 116.1 -6.8Q99.5 2 79 2Q58.5 2 42.1 -6.8Q25.8 -15.5 16.4 -31.8Q7 -48 7 -69.8ZM108.5 -69.8Q108.5 -86.5 100.1 -95.5Q91.8 -104.5 79.5 -104.5Q67 -104.5 58.8 -95.6Q50.5 -86.8 50.5 -69.8Q50.5 -53 58.6 -44Q66.8 -35 79 -35Q91.2 -35 99.9 -44Q108.5 -53 108.5 -69.8Z"/><path transform="rotate(0.88 943.1 224.1) translate(854.00 293.84)" d="M101.2 -141.5Q118.5 -141.5 132.5 -132.8Q146.5 -124 154.6 -107.8Q162.8 -91.5 162.8 -70Q162.8 -48.5 154.6 -32.1Q146.5 -15.8 132.5 -6.9Q118.5 2 101.2 2Q86.5 2 75.5 -3.9Q64.5 -9.8 58.2 -19.5V0H15.5V-185H58.2V-119.8Q64.2 -129.5 75.5 -135.5Q86.8 -141.5 101.2 -141.5ZM88.5 -104.2Q75.8 -104.2 66.9 -95Q58 -85.8 58 -69.8Q58 -53.8 66.9 -44.5Q75.8 -35.2 88.5 -35.2Q101.2 -35.2 110.2 -44.6Q119.2 -54 119.2 -70Q119.2 -86 110.4 -95.1Q101.5 -104.2 88.5 -104.2Z"/><path transform="rotate(-0.66 1112.9 216.1) translate(1023.75 285.81)" d="M101.2 -141.5Q118.5 -141.5 132.5 -132.8Q146.5 -124 154.6 -107.8Q162.8 -91.5 162.8 -70Q162.8 -48.5 154.6 -32.1Q146.5 -15.8 132.5 -6.9Q118.5 2 101.2 2Q86.5 2 75.5 -3.9Q64.5 -9.8 58.2 -19.5V0H15.5V-185H58.2V-119.8Q64.2 -129.5 75.5 -135.5Q86.8 -141.5 101.2 -141.5ZM88.5 -104.2Q75.8 -104.2 66.9 -95Q58 -85.8 58 -69.8Q58 -53.8 66.9 -44.5Q75.8 -35.2 88.5 -35.2Q101.2 -35.2 110.2 -44.6Q119.2 -54 119.2 -70Q119.2 -86 110.4 -95.1Q101.5 -104.2 88.5 -104.2Z"/><path transform="rotate(1.10 1230.4 226.5) translate(1193.50 296.28)" d="M58.2 -185V0H15.5V-185Z"/><path transform="rotate(-0.88 1344.2 215.0) translate(1267.25 284.77)" d="M146.2 -59.5H49.5Q50.5 -46.5 57.9 -39.6Q65.2 -32.8 76 -32.8Q92 -32.8 98.2 -46.2H143.8Q140.2 -32.5 131.1 -21.5Q122 -10.5 108.2 -4.2Q94.5 2 77.5 2Q57 2 41 -6.8Q25 -15.5 16 -31.8Q7 -48 7 -69.8Q7 -91.5 15.9 -107.8Q24.8 -124 40.8 -132.8Q56.8 -141.5 77.5 -141.5Q97.8 -141.5 113.5 -133Q129.2 -124.5 138.1 -108.8Q147 -93 147 -72Q147 -66 146.2 -59.5ZM103.2 -83.2Q103.2 -94.2 95.8 -100.8Q88.2 -107.2 77 -107.2Q66.2 -107.2 58.9 -101Q51.5 -94.8 49.8 -83.2Z"/><path transform="rotate(0.66 1510.4 223.0) translate(1421.25 292.79)" d="M101.2 -141.5Q118.5 -141.5 132.5 -132.8Q146.5 -124 154.6 -107.8Q162.8 -91.5 162.8 -70Q162.8 -48.5 154.6 -32.1Q146.5 -15.8 132.5 -6.9Q118.5 2 101.2 2Q86.5 2 75.5 -3.9Q64.5 -9.8 58.2 -19.5V0H15.5V-185H58.2V-119.8Q64.2 -129.5 75.5 -135.5Q86.8 -141.5 101.2 -141.5ZM88.5 -104.2Q75.8 -104.2 66.9 -95Q58 -85.8 58 -69.8Q58 -53.8 66.9 -44.5Q75.8 -35.2 88.5 -35.2Q101.2 -35.2 110.2 -44.6Q119.2 -54 119.2 -70Q119.2 -86 110.4 -95.1Q101.5 -104.2 88.5 -104.2Z"/><path transform="rotate(-1.10 1671.6 213.6) translate(1591.00 283.37)" d="M68.5 -141.5Q83.2 -141.5 94.4 -135.5Q105.5 -129.5 111.5 -119.8V-139.5H154.2V0H111.5V-19.8Q105.2 -10 94.1 -4Q83 2 68.2 2Q51.2 2 37.2 -6.9Q23.2 -15.8 15.1 -32.1Q7 -48.5 7 -70Q7 -91.5 15.1 -107.8Q23.2 -124 37.2 -132.8Q51.2 -141.5 68.5 -141.5ZM81 -104.2Q68.2 -104.2 59.4 -95.1Q50.5 -86 50.5 -70Q50.5 -54 59.4 -44.6Q68.2 -35.2 81 -35.2Q93.8 -35.2 102.6 -44.5Q111.5 -53.8 111.5 -69.8Q111.5 -85.8 102.6 -95Q93.8 -104.2 81 -104.2Z"/><path transform="rotate(0.77 1839.6 223.7) translate(1760.75 293.49)" d="M158 -139.5 70.5 66.2H24.5L56.5 -4.8L-0.2 -139.5H47.5L79.8 -52.2L111.8 -139.5Z"/></g><g fill="#27AFA9"><path transform="translate(538.00 425.00)" d="M48.6 -44.2Q46.8 -47.4 43.6 -49.1Q40.3 -50.8 35.9 -50.8Q28.2 -50.8 23.6 -45.8Q19 -40.8 19 -32.4Q19 -23.5 23.9 -18.4Q28.7 -13.4 37.2 -13.4Q43 -13.4 47 -16.4Q51 -19.3 52.8 -24.8H32.8V-36.4H67.1V-21.8Q65.3 -15.9 61.1 -10.9Q56.9 -5.8 50.5 -2.7Q44.1 0.5 36 0.5Q26.4 0.5 18.9 -3.7Q11.4 -7.9 7.2 -15.4Q3 -22.8 3 -32.4Q3 -42 7.2 -49.5Q11.4 -56.9 18.9 -61.1Q26.3 -65.3 35.9 -65.3Q47.5 -65.3 55.4 -59.7Q63.4 -54.1 66 -44.2Z"/><path transform="translate(637.54 425.00)" d="M45.9 -11.4H21.8L17.9 0H1.5L24.8 -64.6H43.1L66.4 0H49.8ZM41.9 -23.6 33.9 -47.2 25.9 -23.6Z"/><path transform="translate(734.79 425.00)" d="M78.8 -64.6V0H63.1V-38.7L48.7 0H36L21.4 -38.8V0H5.7V-64.6H24.3L42.4 -19.9L60.4 -64.6Z"/><path transform="translate(848.68 425.00)" d="M21.4 -52V-38.9H42.5V-26.8H21.4V-12.6H45.3V0H5.7V-64.6H45.3V-52Z"/><path transform="translate(927.90 425.00)" d="M3.9 -19.3H20.6Q21 -15.7 23.1 -13.8Q25.2 -12 28.6 -12Q32.1 -12 34.1 -13.6Q36.2 -15.2 36.2 -18Q36.2 -20.4 34.5 -22Q32.9 -23.6 30.6 -24.6Q28.2 -25.6 23.9 -26.9Q17.7 -28.8 13.7 -30.7Q9.8 -32.7 6.9 -36.4Q4 -40.2 4 -46.3Q4 -55.3 10.6 -60.4Q17.1 -65.5 27.6 -65.5Q38.3 -65.5 44.8 -60.4Q51.3 -55.3 51.8 -46.2H34.8Q34.6 -49.3 32.5 -51.1Q30.4 -52.9 27 -52.9Q24.2 -52.9 22.4 -51.4Q20.7 -49.9 20.7 -47Q20.7 -43.9 23.6 -42.1Q26.6 -40.4 32.8 -38.4Q39.1 -36.2 43 -34.3Q46.9 -32.4 49.8 -28.7Q52.6 -25 52.6 -19.2Q52.6 -13.7 49.8 -9.2Q47 -4.7 41.7 -2Q36.3 0.6 29.1 0.6Q22 0.6 16.4 -1.7Q10.8 -4 7.4 -8.5Q4 -13 3.9 -19.3Z"/></g></svg></a>
+<nav class="site-nav" aria-label="Main"><ul><li><a href="../index.html" aria-current="page">Games</a></li><li><a href="../support.html">Support</a></li><li><a href="../privacy.html">Privacy</a></li></ul></nav>
+</header>
+<main id="main">
+<p class="crumb"><a href="../index.html">&larr; All games</a></p>
+<div class="g-hero">
+<img src="img/fleet-bay-2048-icon.webp" width="120" height="120" alt="Fleet Bay 2048 icon">
+<div>
+<h1>Fleet Bay 2048</h1>
+<p class="lead">Swipe to merge boats from rowboat to aircraft carrier in 10,000 puzzle levels.</p>
+<span class="status">Coming soon to the App Store and Google Play</span>
+</div>
+</div>
+<div class="g-grid">
+<div class="g-video">
+<video src="video/fleet-bay-2048-preview.mp4" poster="video/fleet-bay-2048-preview.jpg" width="443" height="960" autoplay muted loop playsinline controls preload="metadata" aria-label="Fleet Bay 2048 gameplay video"></video>
+<p>Real gameplay. Tap the video for sound.</p>
+</div>
+<div>
+<h2>About the game</h2>
+<p>The number puzzle you know, with a harbor full of boats. Swipe to slide every boat, and two matching boats merge into the next, bigger vessel.</p>
+<ul class="features">
+<li>Three ways to play: Classic 4×4, Big Harbor 5×5 and 6×6, and a 10,000-level Adventure</li>
+<li>Adventure goals: launch a liner within a move limit, break rocks, melt ice</li>
+<li>From rowboat to the Ocean Liner (2048) and the Aircraft Carrier (4096)</li>
+<li>Every Adventure level is checked by a solver bot</li>
+</ul>
+<p>Free to play, with ads and optional purchases, including a one-time Remove Ads purchase. Every level can be finished without paying.</p>
+<p>Questions or ideas? Email <a href="mailto:hello@bobblebaygames.com">hello@bobblebaygames.com</a> or visit <a href="../support.html">Support</a>.</p>
+</div>
+</div>
+<section class="block" aria-labelledby="shots-title">
+<h2 id="shots-title">Screenshots</h2>
+<div class="shots">
+<img src="img/fleet-bay-2048-shot-1.webp" width="540" height="960" loading="lazy" alt="Fleet Bay 2048: Merging boats with a swipe">
+<img src="img/fleet-bay-2048-shot-2.webp" width="540" height="960" loading="lazy" alt="Fleet Bay 2048: Launching the Ocean Liner">
+<img src="img/fleet-bay-2048-shot-3.webp" width="540" height="960" loading="lazy" alt="Fleet Bay 2048: The Adventure levels">
+<img src="img/fleet-bay-2048-shot-4.webp" width="540" height="960" loading="lazy" alt="Fleet Bay 2048: Breaking rocks">
+</div>
+</section>
+</main>
+<script>if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });</script>
+<footer class="site-foot">
+<p>© 2026 Bobblebay Games</p>
+<ul>
+<li><a href="../support.html">Support</a></li>
+<li><a href="../privacy.html">Privacy policy</a></li>
+<li><a href="mailto:hello@bobblebaygames.com">hello@bobblebaygames.com</a></li>
+</ul>
+</footer>
+</div>
+</body>
+</html>
